@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_202644) do
     t.string "title"
     t.string "artist"
     t.string "date"
+    t.boolean "is_highlight", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_202644) do
     t.bigint "user_id"
     t.bigint "art_id"
     t.string "keyword"
+    t.boolean "is_highlight", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["art_id"], name: "index_fav_arts_on_art_id"

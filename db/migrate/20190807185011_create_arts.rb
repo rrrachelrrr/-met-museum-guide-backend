@@ -6,6 +6,7 @@ class CreateArts < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :artist
       t.string :date
+      t.boolean :is_highlight, default: false
 
       t.timestamps
     end
