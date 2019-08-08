@@ -3,9 +3,9 @@ class User < ApplicationRecord
   has_many :fav_arts
   has_many :arts, through: :fav_arts
   has_many :comments
-  validates_uniqueness_of :user_name
+  validates_uniqueness_of :username
 
   def profile
   end
-  
+
 end
