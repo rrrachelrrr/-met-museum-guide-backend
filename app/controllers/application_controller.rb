@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
 
   def secret
     # Rails.application.credentials.jwt_secret
-    caravaggiowasamurderer
+    'caravaggiowasamurderer'
   end
 
   def token
