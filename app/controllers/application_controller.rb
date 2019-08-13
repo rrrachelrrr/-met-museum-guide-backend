@@ -10,7 +10,8 @@ class ApplicationController < ActionController::API
   end
 
   def token
-    request.headers["Authorization"].split(" ")[1]
+    request.headers["Authorization"]
+    # .split(" ")[1]
     # in front end need 'Bearer '
   end
 

@@ -38,12 +38,16 @@ ActiveRecord::Schema.define(version: 2019_08_07_202644) do
 
   create_table "fav_arts", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "art_id"
     t.string "keyword"
     t.boolean "is_highlight", default: false
+    t.string "img_url"
+    t.string "title"
+    t.string "artist"
+    t.string "date"
+    t.string "collection"
+    t.integer "api_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["art_id"], name: "index_fav_arts_on_art_id"
     t.index ["user_id"], name: "index_fav_arts_on_user_id"
   end
 
@@ -57,6 +61,5 @@ ActiveRecord::Schema.define(version: 2019_08_07_202644) do
 
   add_foreign_key "comments", "fav_arts"
   add_foreign_key "comments", "users"
-  add_foreign_key "fav_arts", "arts"
   add_foreign_key "fav_arts", "users"
 end

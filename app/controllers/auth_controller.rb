@@ -9,4 +9,8 @@ class AuthController < ApplicationController
       render json: { errors: ["Wrong username/password. Please try again 👩🏽‍🎨"] }, status: :unprocessable_entity
     end
   end
+
+  def show
+    render json: current_user
+  end
 end
