@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile'
 
   resources :users, only: [:index, :create, :show]
-  resources :fav_arts, only: [:index, :create]
+  resources :fav_arts, only: [:index, :create, :destroy]
   resources :comments, only: [:index]
 end

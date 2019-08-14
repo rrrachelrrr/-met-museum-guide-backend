@@ -10,6 +10,13 @@ class FavArtsController < ApplicationController
     render json: favArt
   end
 
+
+  def destroy
+    favArt = FavArt.find_by(id: params[:id])
+    favArt.destroy
+    render json: favArt
+  end
+
   private
 
   def fav_art_params
