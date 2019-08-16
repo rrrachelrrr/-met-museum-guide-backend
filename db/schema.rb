@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_202644) do
+ActiveRecord::Schema.define(version: 2019_08_16_162423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,23 @@ ActiveRecord::Schema.define(version: 2019_08_07_202644) do
     t.index ["user_id"], name: "index_fav_arts_on_user_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.bigint "fav_art_id"
+    t.string "tag_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fav_art_id"], name: "index_tags_on_fav_art_id"
+  end
+
+  create_table "user_tags", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_user_tags_on_tag_id"
+    t.index ["user_id"], name: "index_user_tags_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
@@ -62,4 +79,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_202644) do
   add_foreign_key "comments", "fav_arts"
   add_foreign_key "comments", "users"
   add_foreign_key "fav_arts", "users"
+  add_foreign_key "tags", "fav_arts"
+  add_foreign_key "user_tags", "tags"
+  add_foreign_key "user_tags", "users"
 end
