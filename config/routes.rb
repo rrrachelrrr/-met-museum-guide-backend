@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/profile', to: 'users#profile'
   post '/tag', to: 'fav_art_tags#add_tag_to_art'
+  get '/mytags/:id', to: 'fav_arts#my_tags'
 
   resources :users, only: [:index, :create, :show]
   resources :fav_arts, only: [:index, :create, :destroy]

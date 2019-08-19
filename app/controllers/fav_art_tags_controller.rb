@@ -10,17 +10,17 @@ class FavArtTagsController < ApplicationController
   end
 
   def add_tag_to_art
-    # p "nom nom nom"
-    # cat = params[:cat_id]
-    tag = Tag.find_or_create_by(tag_name: params[:tag_name])
+    # byebug
+    tag = Tag.find_or_create_by(tag_name: params[:tag])
 
-    found_fav_art_tag = FavArt.find_or_create_by(user_id: current_user.id, cat_id: params[:cat_id])
-    
-    render json: found_fav_art_tag
+    fav_art_tag = FavArtTag.find_or_create_by(tag_id: tag.id, fav_art_id: params[:art_id])
+
+    render json: fav_art_tag
   end
 
-  def found
-    render json: feed
+  def create
+    fav_art_tag = FavArtTag.create(fav_art_params)
+    render json: fav_art_tag
   end
 
 private

@@ -14,12 +14,20 @@ class FavArtsController < ApplicationController
     favArt = FavArt.find_by(id: params[:user_id])
   end
 
-
   def destroy
     favArt = FavArt.find_by(id: params[:id])
     favArt.destroy
     render json: favArt
   end
+
+  def my_tags
+    # byebug
+    favArt = FavArt.find_by(id: params[:id])
+    my_tags = FavArtTag.find_by(fav_art_id: favArt.id)
+    render json: my_tags
+  end
+
+  # FavArtTag.first.tag.tag_name
 
   private
 
