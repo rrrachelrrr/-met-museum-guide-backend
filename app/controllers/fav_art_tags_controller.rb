@@ -23,6 +23,12 @@ class FavArtTagsController < ApplicationController
     render json: fav_art_tag
   end
 
+  # def display_names
+  #   byebug
+  #   fav_art_tag = FavArtTag.find(id: params[:id])
+  #   fav_art_tag.tag.name
+  # end
+
 private
 
   def fav_art_params
