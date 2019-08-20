@@ -24,6 +24,12 @@ class UsersController < ApplicationController
     render json: user
   end
 
+  def my_fav_art
+    user = User.find_by(id: params[:id])
+    render json: user.fav_arts
+  end
+
+
   private
 
   def user_params

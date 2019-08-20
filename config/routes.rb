@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/current_user', to: 'auth#show'
   post '/signup', to: 'users#create'
   get '/profile', to: 'users#profile'
+  get '/myart/:id', to: 'users#my_fav_art'
   post '/tag', to: 'fav_art_tags#add_tag_to_art'
   get '/mytags/:id', to: 'fav_arts#my_tags'
 
