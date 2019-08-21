@@ -1,7 +1,8 @@
 class FavArtsController < ApplicationController
   def index
     favArts = FavArt.all
-    render json: favArts
+    # all_my_tags = favArts.map{ |art| art.fav_art_tag}
+    render json: favArts, :include => :tags
   end
 
   def create

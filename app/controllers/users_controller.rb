@@ -25,8 +25,9 @@ class UsersController < ApplicationController
   end
 
   def my_fav_art
-    user = User.find_by(id: params[:id])
-    render json: user.fav_arts
+    # byebug
+    fav_arts = User.find_by(id: params[:id]).fav_arts
+    render json: fav_arts
   end
 
 
