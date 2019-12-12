@@ -5,7 +5,7 @@ class FavArtTagsController < ApplicationController
   end
 
   def show
-    fav_art_tag = FavArtTag.find_by(id: params[:id])
+    fav_art_tag = FavArtTags.find_by(id: params[:id])
     render json: fav_art_tag
   end
 
