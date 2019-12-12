@@ -13,10 +13,10 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
-# require 'rubygems'
-require 'dogapi'
-
-api_key = "c84d354332fb84663d441deb8a1106f4"
+# # require 'rubygems'
+# require 'dogapi'
+#
+# api_key = "c84d354332fb84663d441deb8a1106f4"
 # application_key = "<YOUR_DD_APP_KEY>"
 
 # Submitting events does not require the application key.
